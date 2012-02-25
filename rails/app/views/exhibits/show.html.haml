@@ -4,8 +4,7 @@
   %strong Caption:
   = @exhibit.caption
 %p
-  %strong Person:
-  = @exhibit.person
+  = link_to @exhibit.person.username, @exhibit.person
 
 %p
   = link_to "Edit", edit_exhibit_path(@exhibit)

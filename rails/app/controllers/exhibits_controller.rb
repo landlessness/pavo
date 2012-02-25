@@ -13,7 +13,7 @@ class ExhibitsController < ApplicationController
   end
 
   def create
-    @exhibit = Exhibit.new(params[:exhibit])
+    @exhibit = current_person.exhibits.new(params[:exhibit])
     if @exhibit.save
       redirect_to @exhibit, :notice => "Successfully created exhibit."
     else

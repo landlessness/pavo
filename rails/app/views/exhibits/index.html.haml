@@ -7,7 +7,7 @@
   - for exhibit in @exhibits
     %tr
       %td= exhibit.caption
-      %td= exhibit.person
+      %td= exhibit.person.username
       %td= link_to 'Show', exhibit
       %td= link_to 'Edit', edit_exhibit_path(exhibit)
       %td= link_to 'Destroy', exhibit, :confirm => 'Are you sure?', :method => :delete

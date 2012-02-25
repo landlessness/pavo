@@ -1,0 +1,6 @@
+- title @person.username
+
+%p
+  = link_to "Edit", edit_person_path(@person)
+  |
+  = link_to "Delete Account", @person, :confirm => 'Are you sure?', :method => :delete

@@ -12,8 +12,9 @@
 
   %body
     #container
+      = link_to 'home', '/'
       - if logged_in?
-        = link_to current_person.username, edit_current_person_path
+        = link_to current_person.username, current_person
         = link_to 'Sign out', logout_path
       - else
         = link_to "Sign up", signup_path
