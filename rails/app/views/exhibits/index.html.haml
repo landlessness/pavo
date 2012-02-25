@@ -1,0 +1,15 @@
+- title "Exhibits"
+
+%table
+  %tr
+    %th Caption
+    %th Person
+  - for exhibit in @exhibits
+    %tr
+      %td= exhibit.caption
+      %td= exhibit.person
+      %td= link_to 'Show', exhibit
+      %td= link_to 'Edit', edit_exhibit_path(exhibit)
+      %td= link_to 'Destroy', exhibit, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Exhibit", new_exhibit_path
