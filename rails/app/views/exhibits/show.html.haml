@@ -1,14 +1,16 @@
 - title "Exhibit"
 
 %p
+  = link_to @exhibit.person.username, @exhibit.person
+%p
   = image_tag @exhibit.photo.url(:small)
+%p
+  = render :partial => 'comments', locals: { commentable: @exhibit }
 %p
   %strong Caption:
   = @exhibit.caption
-= render @exhibit.tags || 'Nothing is tagged.' + link_to('tag it up', edit_exhibit_path(@exhibit))
-
 %p
-  = link_to @exhibit.person.username, @exhibit.person
+  = render :partial => 'tags', locals: { exhibit: @exhibit }
 
 %p
   = link_to "Edit", edit_exhibit_path(@exhibit)

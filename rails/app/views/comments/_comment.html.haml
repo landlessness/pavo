@@ -1,0 +1,9 @@
+%ul
+  %li
+    = comment.body
+    %ul
+      %li
+        by
+        = link_to comment.person.username, comment.person
+        = time_ago_in_words comment.updated_at
+        ago

@@ -1,0 +1,9 @@
+%strong Comments:
+= render commentable.comments
+= form_for [commentable, commentable.comments.build] do |f|
+  %p
+    = f.error_messages
+  %p
+    = f.text_area :body
+  %p
+    = f.submit 'comment'

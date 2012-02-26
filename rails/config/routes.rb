@@ -1,5 +1,7 @@
 Prails::Application.routes.draw do
-  resources :tags
+  resources :tags do
+    resources :comments
+  end
 
   match 'person/edit' => 'people#edit', :as => :edit_current_person
 
@@ -13,7 +15,9 @@ Prails::Application.routes.draw do
 
   resources :people
 
-  resources :exhibits
+  resources :exhibits do
+    resources :comments
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

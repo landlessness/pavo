@@ -43,6 +43,7 @@ All models will have timestamp attributes for created and updated timing. All at
   * name
   * logo url
 * Comment
+  * body
 * Like
 * Follow
 
@@ -75,8 +76,10 @@ All models will have timestamp attributes for created and updated timing. All at
 * Brand
 * Comment
   * belongs to an Exhibit or a Tag (polymorphic)
+  * belongs to a Person
 * Like
   * belongs to an Exhibit or a Tag (polymorphic)
+  * belongs to a Person
 * Follow
   * belongs to a Person as Follower
   * belongs to a Person as Followee
