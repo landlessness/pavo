@@ -15,10 +15,10 @@
       = link_to 'home', '/'
       - if logged_in?
         = link_to current_person.username, current_person
-        = link_to 'Sign out', logout_path
+        = link_to 'sign out', logout_path
       - else
-        = link_to "Sign up", signup_path
-        = link_to "Sign in", login_path
+        = link_to "sign up", signup_path
+        = link_to "sign in", login_path
 
       - flash.each do |name, msg|
         = content_tag :div, msg, :id => "flash_#{name}"
