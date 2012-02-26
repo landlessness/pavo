@@ -1,0 +1,15 @@
+one:
+  brand: 
+  category: 
+  name: MyString
+  color: MyString
+  style: MyString
+  description: MyText
+
+two:
+  brand: 
+  category: 
+  name: MyString
+  color: MyString
+  style: MyString
+  description: MyText

@@ -1,4 +1,6 @@
 Prails::Application.routes.draw do
+  resources :products
+
   resources :tags do
     resources :comments
   end

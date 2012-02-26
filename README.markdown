@@ -26,9 +26,11 @@ All models will have timestamp attributes for created and updated timing. All at
   * photo url
 * Product
   * name
+  * description - text
+* Variation
   * color
   * style
-  * description - text
+  * size
 * Person
   * screen name
   * full name

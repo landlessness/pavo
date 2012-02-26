@@ -1,0 +1,27 @@
+- title "Product"
+
+%p
+  %strong Brand:
+  = @product.brand
+%p
+  %strong Category:
+  = @product.category
+%p
+  %strong Name:
+  = @product.name
+%p
+  %strong Color:
+  = @product.color
+%p
+  %strong Style:
+  = @product.style
+%p
+  %strong Description:
+  = @product.description
+
+%p
+  = link_to "Edit", edit_product_path(@product)
+  |
+  = link_to "Destroy", @product, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", products_path

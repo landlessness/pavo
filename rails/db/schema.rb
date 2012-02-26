@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120226035937) do
+ActiveRecord::Schema.define(:version => 20120226153710) do
 
   create_table "comments", :force => true do |t|
     t.integer  "commentable_id"
@@ -40,6 +40,16 @@ ActiveRecord::Schema.define(:version => 20120226035937) do
     t.string   "password_salt"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+  end
+
+  create_table "products", :force => true do |t|
+    t.integer  "brand_id"
+    t.integer  "category_id"
+    t.integer  "person_id"
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "tags", :force => true do |t|

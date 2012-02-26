@@ -1,0 +1,23 @@
+- title "Products"
+
+%table
+  %tr
+    %th Brand
+    %th Category
+    %th Name
+    %th Color
+    %th Style
+    %th Description
+  - for product in @products
+    %tr
+      %td= product.brand
+      %td= product.category
+      %td= product.name
+      %td= product.color
+      %td= product.style
+      %td= product.description
+      %td= link_to 'Show', product
+      %td= link_to 'Edit', edit_product_path(product)
+      %td= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Product", new_product_path

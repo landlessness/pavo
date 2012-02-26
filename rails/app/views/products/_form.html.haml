@@ -1,0 +1,28 @@
+= form_for @product do |f|
+  = f.error_messages
+  %p
+    = f.label :brand
+    %br
+    = f.text_field :brand
+  %p
+    = f.label :category
+    %br
+    = f.text_field :category
+  %p
+    = f.label :name
+    %br
+    = f.text_field :name
+  %p
+    = f.label :color
+    %br
+    = f.text_field :color
+  %p
+    = f.label :style
+    %br
+    = f.text_field :style
+  %p
+    = f.label :description
+    %br
+    = f.text_area :description
+  %p
+    = f.submit
