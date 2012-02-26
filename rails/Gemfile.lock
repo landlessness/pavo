@@ -1,3 +1,19 @@
+GIT
+  remote: git://github.com/thoughtbot/paperclip.git
+  revision: 17c5b8fee30d49aefe8c4de4dce54ce516bfa1b1
+  specs:
+    paperclip (2.7.0)
+      activerecord (>= 2.3.0)
+      activesupport (>= 2.3.2)
+      cocaine (>= 0.0.2)
+      mime-types
+
+GIT
+  remote: https://github.com/ryanb/nested_form.git
+  revision: 486e0f0e93f3ca455d5d0fc7869053257b6afce2
+  specs:
+    nested_form (0.2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -31,6 +47,7 @@ GEM
     arel (3.0.1)
     bcrypt-ruby (3.0.1)
     builder (3.0.0)
+    cocaine (0.2.1)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -114,7 +131,9 @@ DEPENDENCIES
   haml
   jquery-rails
   mocha
+  nested_form!
   nifty-generators
+  paperclip!
   rails (= 3.2.1)
   sass-rails (~> 3.2.3)
   sqlite3

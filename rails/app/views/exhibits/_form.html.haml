@@ -1,8 +1,19 @@
-= form_for @exhibit do |f|
+= nested_form_for @exhibit, html: { :multipart => true } do |f|
   = f.error_messages
   %p
     = f.label :caption
     %br
     = f.text_field :caption
+  %p
+    = f.label :photo
+    %br
+    = f.file_field :photo
+  %p
+    = f.fields_for :tags do |tag_form|
+      = tag_form.label :caption
+      = tag_form.text_field :caption
+      = tag_form.link_to_remove 'remove'
+  %p
+    = f.link_to_add 'add', :tags
   %p
     = f.submit

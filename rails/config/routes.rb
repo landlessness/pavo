@@ -1,4 +1,6 @@
 Prails::Application.routes.draw do
+  resources :tags
+
   match 'person/edit' => 'people#edit', :as => :edit_current_person
 
   match 'signup' => 'people#new', :as => :signup

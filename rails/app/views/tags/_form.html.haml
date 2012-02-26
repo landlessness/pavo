@@ -1,0 +1,12 @@
+= form_for @tag do |f|
+  = f.error_messages
+  %p
+    = f.label :exhibit
+    %br
+    = f.text_field :exhibit
+  %p
+    = f.label :product
+    %br
+    = f.text_field :product
+  %p
+    = f.submit
