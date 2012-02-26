@@ -3,7 +3,7 @@
   %p
     = exhibit_form.label :photo
     %br
-    - if @exhibit.photo
+    - unless @exhibit.new_record?
       = image_tag @exhibit.photo.url(:small)
     %br
     = exhibit_form.file_field :photo
@@ -26,6 +26,6 @@
           = product_form.text_field :description
       = tag_form.link_to_remove 'remove'
   %p
-    = exhibit_form.link_to_add 'tag a product', :tags
+    = link_to 'tag a product', new_exhibit_tag_path(@exhibit)
   %p
     = exhibit_form.submit

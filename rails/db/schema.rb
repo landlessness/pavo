@@ -48,8 +48,14 @@ ActiveRecord::Schema.define(:version => 20120226153710) do
     t.integer  "person_id"
     t.string   "name"
     t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.string   "source"
+    t.string   "materials"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.string   "photo_file_size"
+    t.string   "photo_updated_at"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
   create_table "tags", :force => true do |t|

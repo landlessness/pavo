@@ -19,6 +19,7 @@ Prails::Application.routes.draw do
 
   resources :exhibits do
     resources :comments
+    resources :tags
   end
 
   # The priority is based upon order of creation:

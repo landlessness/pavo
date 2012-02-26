@@ -1,28 +1,27 @@
-= form_for @product do |f|
+= form_for @product, html: { :multipart => true } do |f|
   = f.error_messages
   %p
-    = f.label :brand
+    = f.label :photo
     %br
-    = f.text_field :brand
-  %p
-    = f.label :category
+    - unless @product.new_record?
+      = image_tag @product.photo.url(:small)
     %br
-    = f.text_field :category
+    = f.file_field :photo
   %p
     = f.label :name
     %br
     = f.text_field :name
   %p
-    = f.label :color
-    %br
-    = f.text_field :color
-  %p
-    = f.label :style
-    %br
-    = f.text_field :style
-  %p
     = f.label :description
     %br
     = f.text_area :description
+  %p
+    = f.label :source
+    %br
+    = f.text_field :source
+  %p
+    = f.label :materials
+    %br
+    = f.text_field :materials
   %p
     = f.submit

@@ -6,6 +6,12 @@ class CreateProducts < ActiveRecord::Migration
       t.references :person
       t.string :name
       t.text :description
+      t.string :source
+      t.string :materials
+      t.string :photo_file_name
+      t.string :photo_content_type
+      t.string :photo_file_size
+      t.string :photo_updated_at
       t.timestamps
     end
   end

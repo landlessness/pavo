@@ -8,7 +8,8 @@ class TagsController < ApplicationController
   end
 
   def new
-    @tag = Tag.new
+    @exhibit = Exhibit.find(params[:exhibit_id])
+    @tag = @exhibit.tags.build
   end
 
   def create

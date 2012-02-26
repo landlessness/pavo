@@ -1,9 +1,9 @@
-= form_for @tag do |f|
+= form_for [@exhibit, @tag] do |f|
   = f.error_messages
   %p
-    = f.label :exhibit
+    = image_tag @exhibit.photo.url(:small)
     %br
-    = f.text_field :exhibit
+    = @exhibit.caption
   %p
     = f.label :product
     %br

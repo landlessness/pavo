@@ -1,23 +1,19 @@
 - title "Product"
 
-%p
-  %strong Brand:
-  = @product.brand
-%p
-  %strong Category:
-  = @product.category
+= image_tag @product.photo.url(:small) unless @product.photo.nil?
 %p
   %strong Name:
   = @product.name
 %p
-  %strong Color:
-  = @product.color
-%p
-  %strong Style:
-  = @product.style
-%p
   %strong Description:
   = @product.description
+%p
+  %strong Source:
+  = @product.source
+%p
+  %strong Materials:
+  = @product.materials
+
 
 %p
   = link_to "Edit", edit_product_path(@product)

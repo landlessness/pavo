@@ -2,20 +2,18 @@
 
 %table
   %tr
-    %th Brand
-    %th Category
+    %th
     %th Name
-    %th Color
-    %th Style
     %th Description
+    %th Source
+    %th Materials
   - for product in @products
     %tr
-      %td= product.brand
-      %td= product.category
+      %td= image_tag product.photo.url(:thumb)
       %td= product.name
-      %td= product.color
-      %td= product.style
       %td= product.description
+      %td= product.source
+      %td= product.materials
       %td= link_to 'Show', product
       %td= link_to 'Edit', edit_product_path(product)
       %td= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete
