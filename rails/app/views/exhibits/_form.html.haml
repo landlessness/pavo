@@ -1,31 +1,14 @@
-= nested_form_for @exhibit, html: { :multipart => true } do |exhibit_form|
+= nested_form_for @exhibit, html: { multipart: true } do |exhibit_form|
   = exhibit_form.error_messages
   %p
     = exhibit_form.label :photo
     %br
-    - unless @exhibit.new_record?
-      = image_tag @exhibit.photo.url(:small)
+      = image_tag @exhibit.photo.url(:small) unless @exhibit.photo.updated_at.nil?
     %br
     = exhibit_form.file_field :photo
   %p
     = exhibit_form.label :caption
     %br
     = exhibit_form.text_field :caption
-  %p
-    = exhibit_form.label :products
-    %br
-    = exhibit_form.fields_for :tags do |tag_form|
-      = tag_form.label :caption
-      = tag_form.text_field :caption
-      = tag_form.fields_for :products do |product_form|
-        %p
-          = product_form.label :name
-          = product_form.text_field :name
-        %p
-          = product_form.label :description
-          = product_form.text_field :description
-      = tag_form.link_to_remove 'remove'
-  %p
-    = link_to 'tag a product', new_exhibit_tag_path(@exhibit)
   %p
     = exhibit_form.submit

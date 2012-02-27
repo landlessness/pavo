@@ -1,5 +1,9 @@
 - title @person.username
-
+= image_tag @person.photo.url(:small)  unless @person.photo.updated_at.nil?
+%h1 Looks
+= render @person.exhibits
+%h1 Products
+= render @person.products
 %p
   = link_to "Edit", edit_person_path(@person)
   |

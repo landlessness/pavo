@@ -1,14 +1,14 @@
-- title "Exhibit"
+- title @exhibit.caption
 
 %p
+  by
   = link_to @exhibit.person.username, @exhibit.person
 %p
-  = image_tag @exhibit.photo.url(:small)
+  = image_tag @exhibit.photo.url unless @exhibit.photo.updated_at.nil?
 %p
   = render :partial => 'comments', locals: { commentable: @exhibit }
 %p
-  %strong Caption:
-  = @exhibit.caption
+  = link_to 'tag a product', new_exhibit_tag_path(@exhibit)
 %p
   = render :partial => 'tags', locals: { exhibit: @exhibit }
 

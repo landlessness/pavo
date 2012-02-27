@@ -9,13 +9,10 @@
     %th Materials
   - for product in @products
     %tr
-      %td= image_tag product.photo.url(:thumb)
-      %td= product.name
+      %td= link_to(image_tag(product.photo.url(:thumb)), product)
+      %td= link_to(product.name, product)
       %td= product.description
       %td= product.source
       %td= product.materials
-      %td= link_to 'Show', product
-      %td= link_to 'Edit', edit_product_path(product)
-      %td= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete
-
+      
 %p= link_to "New Product", new_product_path

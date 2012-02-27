@@ -1,6 +1,7 @@
 - title "Product"
 
-= image_tag @product.photo.url(:small) unless @product.photo.nil?
+
+= image_tag @product.photo.url(:small) unless @product.photo.updated_at.nil?
 %p
   %strong Name:
   = @product.name
@@ -13,7 +14,8 @@
 %p
   %strong Materials:
   = @product.materials
-
+%h1 Who has it?
+= render @product.exhibits
 
 %p
   = link_to "Edit", edit_product_path(@product)

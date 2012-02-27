@@ -8,14 +8,16 @@ class TagsController < ApplicationController
   end
 
   def new
-    @exhibit = Exhibit.find(params[:exhibit_id])
+    @exhibit = current_person.exhibits.find(params[:exhibit_id])
     @tag = @exhibit.tags.build
   end
 
   def create
-    @tag = Tag.new(params[:tag])
+    @exhibit = current_person.exhibits.find(params[:exhibit_id])
+    @product = Product.find(params[:tag][:product_id])
+    @tag = @exhibit.tags.build(product: @product)
     if @tag.save
-      redirect_to @tag, :notice => "Successfully created tag."
+      redirect_to @exhibit, :notice => "Successfully created tag."
     else
       render :action => 'new'
     end

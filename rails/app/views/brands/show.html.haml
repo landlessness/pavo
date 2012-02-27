@@ -1,0 +1,14 @@
+- title @brand.name
+%p
+  = image_tag @brand.photo.url(:small)  unless @brand.photo.updated_at.nil?
+%h1
+  Products
+= render @brand.products
+
+
+%p
+  = link_to "Edit", edit_brand_path(@brand)
+  |
+  = link_to "Destroy", @brand, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", brands_path

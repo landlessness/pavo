@@ -1,5 +1,12 @@
-= form_for @person do |f|
+= form_for @person, html:  { multipart: true } do |f|
   = f.error_messages
+  %p
+    = f.label :photo
+    %br
+    - unless @person.new_record? || @person.photo_updated_at.nil?
+      = image_tag @person.photo.url(:small)
+    %br
+    = f.file_field :photo
   %p
     = f.label :username
     %br

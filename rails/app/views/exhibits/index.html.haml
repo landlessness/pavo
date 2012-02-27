@@ -1,15 +1,14 @@
-- title "Exhibits"
+- title "Home"
 
 %table
   %tr
+    %th 
     %th Caption
     %th Person
   - for exhibit in @exhibits
     %tr
-      %td= exhibit.caption
-      %td= exhibit.person.username
-      %td= link_to 'Show', exhibit
-      %td= link_to 'Edit', edit_exhibit_path(exhibit)
-      %td= link_to 'Destroy', exhibit, :confirm => 'Are you sure?', :method => :delete
+      %td= link_to(image_tag(exhibit.photo.url(:thumb)), exhibit)
+      %td= link_to(exhibit.caption, exhibit)
+      %td= link_to(exhibit.person.username, exhibit.person)
 
 %p= link_to "New Exhibit", new_exhibit_path

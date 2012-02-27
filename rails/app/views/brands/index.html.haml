@@ -1,0 +1,12 @@
+- title "Brands"
+
+%table
+  %tr
+    %th
+    %th
+  - for brand in @brands
+    %tr
+      %td= link_to(image_tag(brand.photo.url(:thumb)), brand)
+      %td= link_to(brand.name, brand)
+
+%p= link_to "New Brand", new_brand_path

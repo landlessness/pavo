@@ -1,0 +1,12 @@
+- title "People"
+
+%table
+  %tr
+    %th
+    %th
+  - for person in @people
+    %tr
+      %td= link_to(image_tag(person.photo.url(:thumb)), person)
+      %td= link_to(person.username, person)
+
+%p= link_to "New Brand", new_brand_path

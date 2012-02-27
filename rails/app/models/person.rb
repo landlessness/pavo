@@ -1,8 +1,11 @@
 class Person < ActiveRecord::Base
   has_many :exhibits
+  has_many :products, through: :exhibits
   has_many :comments
+  has_attached_file :photo,
+                    styles: {small: '150x150>', thumb: '50x50>'}
   # new columns need to be added here to be writable through mass assignment
-  attr_accessible :username, :email, :password, :password_confirmation
+  attr_accessible :username, :email, :password, :password_confirmation, :photo
 
   attr_accessor :password
   before_save :prepare_password

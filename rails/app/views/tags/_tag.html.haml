@@ -1,4 +1,6 @@
 %p
+  = render tag.product
+%p
   = tag.caption
 %p
   = render :partial => 'comments', locals: { commentable: tag }

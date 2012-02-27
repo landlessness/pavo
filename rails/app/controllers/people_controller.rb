@@ -1,6 +1,10 @@
 class PeopleController < ApplicationController
   before_filter :login_required, :except => [:new, :create]
 
+  def index
+    @people = Person.all
+  end
+
   def show
     @person = Person.find(params[:id])
   end

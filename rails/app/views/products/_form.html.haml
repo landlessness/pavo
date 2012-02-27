@@ -3,10 +3,13 @@
   %p
     = f.label :photo
     %br
-    - unless @product.new_record?
-      = image_tag @product.photo.url(:small)
+    = image_tag @product.photo.url(:small)  unless @product.photo.updated_at.nil?
     %br
     = f.file_field :photo
+  %p
+    = f.label :brand
+    %br
+    = f.text_field :brand
   %p
     = f.label :name
     %br

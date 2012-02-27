@@ -7,5 +7,5 @@ class Exhibit < ActiveRecord::Base
   belongs_to :person
   has_many :comments, as: :commentable
   has_attached_file :photo,
-                    styles: {small: '150x150>'}
+                    styles: {small: '150x150>', thumb: '50x50>'}
 end

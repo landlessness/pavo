@@ -1,0 +1,14 @@
+= form_for @brand do |f|
+  = f.error_messages
+  %p
+    = f.label :photo
+    %br
+    = image_tag @brand.photo.url(:small)  unless @brand.photo.updated_at.nil?
+    %br
+    = f.file_field :photo
+  %p
+    = f.label :name
+    %br
+    = f.text_field :name
+  %p
+    = f.submit
