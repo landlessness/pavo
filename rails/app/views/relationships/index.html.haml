@@ -7,8 +7,8 @@
     %th Status
   - for relationship in @relationships
     %tr
-      %td= relationship.follower
-      %td= relationship.followee
+      %td= link_to relationship.follower.username, relationship.follower
+      %td= link_to relationship.followee.username, relationship.followee
       %td= relationship.status
       %td= link_to 'Show', relationship
       %td= link_to 'Edit', edit_relationship_path(relationship)

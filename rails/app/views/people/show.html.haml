@@ -7,6 +7,10 @@
   = link_to 'follow', new_person_relationship_path(@person)
 %br
 = image_tag @person.photo.url(:small)  unless @person.photo.updated_at.nil?
+%h1 Followers
+= render @person.followers
+%h1 Followees
+= render @person.followees
 %h1 Looks
 = render @person.exhibits
 %h1 Products
