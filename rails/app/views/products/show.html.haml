@@ -1,7 +1,9 @@
 - title "Product"
 
-
 = image_tag @product.photo.url(:small) unless @product.photo.updated_at.nil?
+%p
+  %strong Brand:
+  = @product.brand.name
 %p
   %strong Name:
   = @product.name
