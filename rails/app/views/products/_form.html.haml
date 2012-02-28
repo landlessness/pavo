@@ -7,6 +7,8 @@
     %br
     = f.file_field :photo
   %p
+    = select('product', 'category_id', Category.all.collect {|c| [ c.name, c.id ] })
+  %p
     = select('product', 'brand_id', Brand.all.collect {|b| [ b.name, b.id ] })
   %p
     = f.label :name

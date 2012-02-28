@@ -1,4 +1,6 @@
 Prails::Application.routes.draw do
+  resources :categories
+
   resources :brands
 
   resources :products

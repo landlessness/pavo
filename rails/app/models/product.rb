@@ -1,6 +1,7 @@
 class Product < ActiveRecord::Base
-  attr_accessible :brand_id, :category, :name, :color, :style, :description, :source, :materials
+  attr_accessible :brand_id, :category_id, :name, :color, :style, :description, :source, :materials
   belongs_to :brand
+  belongs_to :category
   has_many :tags
   has_many :exhibits, through: :tags
   has_attached_file :photo,

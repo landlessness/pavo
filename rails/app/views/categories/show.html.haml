@@ -1,0 +1,19 @@
+- title @category.name
+%p
+  = image_tag @category.photo.url(:small)
+%h1
+  Products
+= render @category.products
+%p
+  %strong Parent:
+  = @category.parent ? link_to(@category.parent.name, @category.parent) : 'none'
+%p
+  %strong Children:
+  = render @category.children
+
+%p
+  = link_to "Edit", edit_category_path(@category)
+  |
+  = link_to "Destroy", @category, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", categories_path

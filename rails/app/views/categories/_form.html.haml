@@ -1,0 +1,10 @@
+= form_for @category do |f|
+  = f.error_messages
+  %p
+    = f.label :name
+    %br
+    = f.text_field :name
+  %p
+    = select('category', 'category_id', Category.all.collect {|c| [ c.name, c.id ] })
+  %p
+    = f.submit
