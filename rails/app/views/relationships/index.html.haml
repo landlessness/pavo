@@ -1,0 +1,17 @@
+- title "Relationships"
+
+%table
+  %tr
+    %th Follower
+    %th Followee
+    %th Status
+  - for relationship in @relationships
+    %tr
+      %td= relationship.follower
+      %td= relationship.followee
+      %td= relationship.status
+      %td= link_to 'Show', relationship
+      %td= link_to 'Edit', edit_relationship_path(relationship)
+      %td= link_to 'Destroy', relationship, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Relationship", new_relationship_path

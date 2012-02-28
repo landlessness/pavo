@@ -1,0 +1,9 @@
+one:
+  follower: 
+  followee: 
+  status: MyString
+
+two:
+  follower: 
+  followee: 
+  status: MyString

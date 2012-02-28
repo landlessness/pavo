@@ -1,0 +1,7 @@
+= form_for [@followee, @relationship] do |f|
+  = f.error_messages
+  follow
+  = @followee.username
+  ?
+  %p
+    = f.submit

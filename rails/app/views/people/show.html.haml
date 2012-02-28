@@ -2,7 +2,7 @@
 - if current_person == @person
   you 
 - elsif current_person.follows?(@person)
-  = link_to 'unfollow', current_person.follower_relationship_to(@person), :confirm => 'Are you sure?', :method => :delete
+  = link_to 'unfollow', current_person.followee_relationship_to(@person), :confirm => 'Are you sure?', :method => :delete
 - else
   = link_to 'follow', new_person_relationship_path(@person)
 %br

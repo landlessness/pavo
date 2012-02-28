@@ -37,8 +37,8 @@ class Person < ActiveRecord::Base
     self.followees.exists?(person)
   end
 
-  def follower_relationship_to(followee)
-    return self.follower_relationships.first
+  def followee_relationship_to(followee)
+    return self.followee_relationships.where(followee_id: followee).first
     # Relationship.first
   end
 
