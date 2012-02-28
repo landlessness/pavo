@@ -41,10 +41,12 @@ gem 'haml'
 gem 'paperclip', git: 'git://github.com/thoughtbot/paperclip.git'
 gem 'nested_form', git: 'https://github.com/ryanb/nested_form.git'
 
+group :development do
+  gem 'nifty-generators'
+end
 group :test do
   gem 'mocha'
 end
-
-group :development do
-  gem 'nifty-generators'
+group :production do
+  gem 'rack-google_analytics', :require => "rack/google_analytics"
 end

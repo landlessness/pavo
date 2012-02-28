@@ -19,7 +19,10 @@ Prails::Application.routes.draw do
 
   resources :sessions
 
-  resources :people
+  resources :people do
+    resources :relationships
+  end
+  resources :relationships
 
   resources :exhibits do
     resources :comments

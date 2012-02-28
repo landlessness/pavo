@@ -13,7 +13,7 @@
 * Brand
 * Comment
 * Like
-* Follow
+* Relationship
 * Point (more complete, more points, networks, tags per Exhibit, comments, like)
 * Leaderboard
 
@@ -47,7 +47,8 @@ All models will have timestamp attributes for created and updated timing. All at
 * Comment
   * body
 * Like
-* Follow
+* Relationship
+  * status
 
 ## Associations
 * Exhibit
@@ -82,7 +83,7 @@ All models will have timestamp attributes for created and updated timing. All at
 * Like
   * belongs to an Exhibit or a Tag (polymorphic)
   * belongs to a Person
-* Follow
+* Relationship
   * belongs to a Person as Follower
   * belongs to a Person as Followee
 

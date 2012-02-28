@@ -2,6 +2,11 @@ class Person < ActiveRecord::Base
   has_many :exhibits
   has_many :products, through: :exhibits
   has_many :comments
+  has_many :follower_relationships, foreign_key: 'followee_id', class_name: 'Relationship'
+  has_many :followers, class_name: 'Person', through: :follower_relationships
+  has_many :followee_relationships, foreign_key: 'follower_id', class_name: 'Relationship'
+  has_many :followees, class_name: 'Person', through: :followee_relationships
+  
   has_attached_file :photo,
                     styles: {small: '150x150>', thumb: '50x50>'}
   # new columns need to be added here to be writable through mass assignment
@@ -26,6 +31,15 @@ class Person < ActiveRecord::Base
 
   def encrypt_password(pass)
     BCrypt::Engine.hash_secret(pass, password_salt)
+  end
+
+  def follows?(person)
+    self.followees.exists?(person)
+  end
+
+  def follower_relationship_to(followee)
+    return self.follower_relationships.first
+    # Relationship.first
   end
 
   private

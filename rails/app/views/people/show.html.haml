@@ -1,4 +1,11 @@
 - title @person.username
+- if current_person == @person
+  you 
+- elsif current_person.follows?(@person)
+  = link_to 'unfollow', current_person.follower_relationship_to(@person), :confirm => 'Are you sure?', :method => :delete
+- else
+  = link_to 'follow', new_person_relationship_path(@person)
+%br
 = image_tag @person.photo.url(:small)  unless @person.photo.updated_at.nil?
 %h1 Looks
 = render @person.exhibits
