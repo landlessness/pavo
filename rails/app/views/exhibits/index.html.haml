@@ -1,5 +1,6 @@
-- title "Home"
+- title 'Feed'
 
+%p= link_to 'New Look', new_exhibit_path
 %table
   %tr
     %th 
@@ -11,4 +12,4 @@
       %td= link_to(exhibit.caption, exhibit)
       %td= link_to(exhibit.person.username, exhibit.person)
 
-%p= link_to "New Exhibit", new_exhibit_path
+%p= link_to 'New Look', new_exhibit_path

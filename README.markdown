@@ -15,7 +15,6 @@
 * Like
 * Relationship
 * Point (more complete, more points, networks, tags per Exhibit, comments, like)
-* Leaderboard
 
 ## Attributes
 

@@ -9,7 +9,8 @@ class TagsController < ApplicationController
 
   def new
     @exhibit = current_person.exhibits.find(params[:exhibit_id])
-    @tag = @exhibit.tags.build
+    @q = Product.search(params[:q])
+    @products = @q.result(:distinct => true)
   end
 
   def create
@@ -38,7 +39,8 @@ class TagsController < ApplicationController
 
   def destroy
     @tag = Tag.find(params[:id])
+    exhibit = @tag.exhibit
     @tag.destroy
-    redirect_to tags_url, :notice => "Successfully destroyed tag."
+    redirect_to exhibit, :notice => "Successfully destroyed tag."
   end
 end

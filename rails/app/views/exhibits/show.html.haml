@@ -6,17 +6,17 @@
 %p
   = image_tag @exhibit.photo.url unless @exhibit.photo.updated_at.nil?
 %p
-  = render :partial => 'likes/likes', locals: { likable: @exhibit }
+  = render partial: 'likes/likes', locals: { likable: @exhibit }
 %p
-  = render :partial => 'comments/comments', locals: { commentable: @exhibit }
+  = render partial: 'comments/comments', locals: { commentable: @exhibit }
 %p
   = link_to 'tag a product', new_exhibit_tag_path(@exhibit)
 %p
-  = render :partial => 'tags', locals: { exhibit: @exhibit }
+  = render partial: 'tags', locals: { exhibit: @exhibit }
 
 %p
   = link_to "Edit", edit_exhibit_path(@exhibit)
   |
-  = link_to "Destroy", @exhibit, :confirm => 'Are you sure?', :method => :delete
+  = link_to "Destroy", @exhibit, :confirm => 'Are you sure?', method: :delete
   |
   = link_to "View All", exhibits_path

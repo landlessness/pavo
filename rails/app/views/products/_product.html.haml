@@ -1,3 +1,9 @@
+%h2= link_to product.brand.name, product.brand
+- unless local_assigns[:exhibit].nil?
+  %p
+    = form_for [exhibit, exhibit.tags.build] do |f|
+      = hidden_field_tag :'tag[product_id]', product.id
+      = f.submit 'tag'
 %p
   = link_to(image_tag(product.photo.url(:small)), product)
 %p

@@ -40,6 +40,7 @@ gem 'bcrypt-ruby', require: 'bcrypt'
 gem 'haml'
 gem 'paperclip', git: 'git://github.com/thoughtbot/paperclip.git'
 gem 'nested_form', git: 'https://github.com/ryanb/nested_form.git'
+gem 'ransack'
 
 group :development do
   gem 'nifty-generators'

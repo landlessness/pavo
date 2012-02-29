@@ -1,12 +1,11 @@
-= form_for [@exhibit, @tag] do |f|
-  = f.error_messages
-  %p
-    = image_tag @exhibit.photo.url(:small)
-    %br
-    = @exhibit.caption
-  %p
-    = f.label :product_id
-    %br
-    = f.text_field :product_id
-  %p
-    = f.submit
+%p
+  = link_to(image_tag(@exhibit.photo.url(:small)), @exhibit)
+  %br
+  = link_to @exhibit.caption, @exhibit
+%p
+  = render @exhibit.tags
+= search_form_for @q, url: new_exhibit_tag_path(@exhibit) do |f|
+  = f.label :name_or_description_or_brand_name_cont
+  = f.text_field :name_or_description_or_brand_name_cont
+  = f.submit
+= render @products, exhibit: @exhibit

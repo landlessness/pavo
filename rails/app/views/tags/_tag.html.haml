@@ -1,8 +1,11 @@
 %p
   = render tag.product
 %p
+  = link_to 'untag', tag, confirm: 'Are you sure?', method: :delete
+%p
   = tag.caption
 %p
   = render :partial => 'likes/likes', locals: { likable: tag }
 %p
   = render :partial => 'comments/comments', locals: { commentable: tag }
+  
