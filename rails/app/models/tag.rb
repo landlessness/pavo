@@ -4,4 +4,5 @@ class Tag < ActiveRecord::Base
   belongs_to :product
   accepts_nested_attributes_for :product
   has_many :comments, as: :commentable
+  has_many :likes, as: :likable
 end

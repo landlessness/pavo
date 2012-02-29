@@ -2,10 +2,10 @@
 
 %p
   %strong Exhibit:
-  = @tag.exhibit
+  = render @tag.exhibit
 %p
   %strong Product:
-  = @tag.product
+  = render @tag.product
 
 %p
   = link_to "Edit", edit_tag_path(@tag)

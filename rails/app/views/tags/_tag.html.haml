@@ -3,4 +3,6 @@
 %p
   = tag.caption
 %p
-  = render :partial => 'comments', locals: { commentable: tag }
+  = render :partial => 'likes/likes', locals: { likable: tag }
+%p
+  = render :partial => 'comments/comments', locals: { commentable: tag }

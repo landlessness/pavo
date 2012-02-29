@@ -1,0 +1,15 @@
+- title "Like"
+
+%p
+  %strong Person:
+  = render @like.person
+%p
+  %strong Likable:
+  = render @like.likable
+
+%p
+  = link_to "Edit", edit_like_path(@like)
+  |
+  = link_to "Destroy", @like, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", likes_path

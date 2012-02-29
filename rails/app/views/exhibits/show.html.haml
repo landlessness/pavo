@@ -6,7 +6,9 @@
 %p
   = image_tag @exhibit.photo.url unless @exhibit.photo.updated_at.nil?
 %p
-  = render :partial => 'comments', locals: { commentable: @exhibit }
+  = render :partial => 'likes/likes', locals: { likable: @exhibit }
+%p
+  = render :partial => 'comments/comments', locals: { commentable: @exhibit }
 %p
   = link_to 'tag a product', new_exhibit_tag_path(@exhibit)
 %p

@@ -6,9 +6,9 @@ class Exhibit < ActiveRecord::Base
   accepts_nested_attributes_for :products
   belongs_to :person
   has_many :comments, as: :commentable
+  has_many :likes, as: :likable
   has_attached_file :photo,
                     styles: {small: '150x150>', thumb: '50x50>'}
 
-  # Exhibit.
   scope :followees, lambda { |follower| joins(person: :follower_relationships).where(relationships: {follower_id: follower})}
 end

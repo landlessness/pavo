@@ -1,0 +1,8 @@
+%p
+  = likable.likes.count
+  likes
+%p
+  - if current_person.likes?(likable)
+    = link_to 'unlike', current_person.like_for(likable), :confirm => 'Are you sure?', :method => :delete
+  - else
+    = link_to 'like', polymorphic_path([likable, likable.likes.build], action: :new)

@@ -6,6 +6,8 @@ class Person < ActiveRecord::Base
   has_many :followers, class_name: 'Person', through: :follower_relationships
   has_many :followee_relationships, foreign_key: 'follower_id', class_name: 'Relationship'
   has_many :followees, class_name: 'Person', through: :followee_relationships
+  has_many :likes
+  has_many :likables, through: :likes
   
   has_attached_file :photo,
                     styles: {small: '150x150>', thumb: '50x50>'}
@@ -41,7 +43,15 @@ class Person < ActiveRecord::Base
     return self.followee_relationships.where(followee_id: followee).first
     # Relationship.first
   end
-
+  
+  def likes?(likable)
+    likable.likes.joins(:person).where(person_id: self).exists?
+  end
+  
+  def like_for(likable)
+    likable.likes.joins(:person).where(person_id: self).first
+  end
+  
   private
 
   def prepare_password

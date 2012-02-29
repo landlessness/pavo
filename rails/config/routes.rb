@@ -1,4 +1,6 @@
 Prails::Application.routes.draw do
+  resources :likes
+
   resources :categories
 
   resources :brands
@@ -6,6 +8,7 @@ Prails::Application.routes.draw do
   resources :products
 
   resources :tags do
+    resources :likes
     resources :comments
   end
 
@@ -25,6 +28,7 @@ Prails::Application.routes.draw do
   resources :relationships
 
   resources :exhibits do
+    resources :likes
     resources :comments
     resources :tags
   end
