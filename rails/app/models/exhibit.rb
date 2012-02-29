@@ -8,4 +8,7 @@ class Exhibit < ActiveRecord::Base
   has_many :comments, as: :commentable
   has_attached_file :photo,
                     styles: {small: '150x150>', thumb: '50x50>'}
+
+  # Exhibit.
+  scope :followees, lambda { |follower| joins(person: :follower_relationships).where(relationships: {follower_id: follower})}
 end

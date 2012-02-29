@@ -1,7 +1,11 @@
 class ExhibitsController < ApplicationController
   before_filter :login_required
   def index
-    @exhibits = Exhibit.all
+    if logged_in?
+      @exhibits = Exhibit.followees(current_person)
+    else
+      @exhibits = Exhibit.all
+    end
   end
 
   def show
