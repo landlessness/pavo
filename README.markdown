@@ -8,13 +8,15 @@
 * Person
 * Tag
 * Category
-* Purchase
-* Store
 * Brand
 * Comment
 * Like
 * Relationship
+### To Do
+* Purchase
+* Store
 * Point (more complete, more points, networks, tags per Exhibit, comments, like)
+* Badges
 
 ## Attributes
 
@@ -95,3 +97,36 @@ All models will have timestamp attributes for created and updated timing. All at
 ### Web Services
 * Amazon API
 
+## Photo Layouts
+
+one
+11
+11
+
+two horizontal
+11
+22
+
+two ver
+12
+12
+
+three top
+11
+23
+
+three bottom
+23
+11
+
+three right
+21
+31
+
+three left
+12
+13
+
+four
+12
+34

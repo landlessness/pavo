@@ -26,11 +26,11 @@ class ExhibitsController < ApplicationController
   end
 
   def edit
-    @exhibit = Exhibit.find(params[:id])
+    @exhibit = current_person.exhibits.find(params[:id])
   end
 
   def update
-    @exhibit = Exhibit.find(params[:id])
+    @exhibit = current_person.exhibits.find(params[:id])
     if @exhibit.update_attributes(params[:exhibit])
       redirect_to @exhibit, :notice  => "Successfully updated exhibit."
     else
@@ -39,7 +39,7 @@ class ExhibitsController < ApplicationController
   end
 
   def destroy
-    @exhibit = Exhibit.find(params[:id])
+    @exhibit = current_person.exhibits.find(params[:id])
     @exhibit.destroy
     redirect_to exhibits_url, :notice => "Successfully destroyed exhibit."
   end

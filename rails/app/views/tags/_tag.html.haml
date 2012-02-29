@@ -1,7 +1,9 @@
 %p
   = render tag.product
-%p
-  = link_to 'untag', tag, confirm: 'Are you sure?', method: :delete
+- if logged_in? && tag.exhibit.person == current_person
+  %p
+    = form_for tag, method: :delete do |f|
+      = f.submit 'remove'
 %p
   = tag.caption
 %p

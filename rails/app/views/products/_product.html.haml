@@ -1,5 +1,5 @@
 %h2= link_to product.brand.name, product.brand
-- unless local_assigns[:exhibit].nil?
+- if logged_in? && !local_assigns[:exhibit].nil? && exhibit.person == current_person
   %p
     = form_for [exhibit, exhibit.tags.build] do |f|
       = hidden_field_tag :'tag[product_id]', product.id

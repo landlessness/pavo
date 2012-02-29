@@ -9,14 +9,16 @@
   = render partial: 'likes/likes', locals: { likable: @exhibit }
 %p
   = render partial: 'comments/comments', locals: { commentable: @exhibit }
-%p
-  = link_to 'tag a product', new_exhibit_tag_path(@exhibit)
+- if logged_in? && @exhibit.person == current_person
+  %p
+    = link_to 'tag a product', new_exhibit_tag_path(@exhibit)
 %p
   = render partial: 'tags', locals: { exhibit: @exhibit }
 
 %p
-  = link_to "Edit", edit_exhibit_path(@exhibit)
-  |
-  = link_to "Destroy", @exhibit, :confirm => 'Are you sure?', method: :delete
-  |
+  - if logged_in? && current_person == @exhibit.person
+    = link_to "Edit", edit_exhibit_path(@exhibit) 
+    |
+    = link_to "Destroy", @exhibit, :confirm => 'Are you sure?', method: :delete
+    |
   = link_to "View All", exhibits_path
