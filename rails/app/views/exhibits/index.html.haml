@@ -6,10 +6,13 @@
     %th 
     %th Caption
     %th Person
+    %th Created
   - for exhibit in @exhibits
     %tr
       %td= link_to(image_tag(exhibit.photo.url(:thumb)), exhibit)
       %td= link_to(exhibit.caption, exhibit)
       %td= link_to(exhibit.person.username, exhibit.person)
-
+      %td
+        = time_ago_in_words exhibit.created_at
+        ago
 %p= link_to 'New Look', new_exhibit_path

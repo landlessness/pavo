@@ -7,7 +7,7 @@ class Person < ActiveRecord::Base
   has_many :followee_relationships, foreign_key: 'follower_id', class_name: 'Relationship'
   has_many :followees, class_name: 'Person', through: :followee_relationships
   has_many :likes
-  has_many :likables, through: :likes
+  has_many :rewards
   
   has_attached_file :photo,
                     styles: {small: '150x150>', thumb: '50x50>'}
@@ -50,6 +50,10 @@ class Person < ActiveRecord::Base
   
   def like_for(likable)
     likable.likes.joins(:person).where(person_id: self).first
+  end
+  
+  def points
+    self.rewards.sum('points')
   end
   
   private

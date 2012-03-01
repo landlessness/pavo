@@ -18,7 +18,7 @@ class TagsController < ApplicationController
     @product = Product.find(params[:tag][:product_id])
     @tag = @exhibit.tags.build(product: @product)
     if @tag.save
-      redirect_to @exhibit, :notice => "Successfully created tag."
+      redirect_to @exhibit, notice: reward_notice(@tag.reward)
     else
       render :action => 'new'
     end

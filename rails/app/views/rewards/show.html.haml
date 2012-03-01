@@ -1,0 +1,18 @@
+- title "Reward"
+
+%p
+  %strong Rewardable:
+  = @reward.rewardable
+%p
+  %strong Person:
+  = @reward.person
+%p
+  %strong Value:
+  = @reward.value
+
+%p
+  = link_to "Edit", edit_reward_path(@reward)
+  |
+  = link_to "Destroy", @reward, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", rewards_path

@@ -1,0 +1,17 @@
+- title "Rewards"
+
+%table
+  %tr
+    %th Rewardable
+    %th Person
+    %th Value
+  - for reward in @rewards
+    %tr
+      %td= reward.rewardable
+      %td= reward.person
+      %td= reward.value
+      %td= link_to 'Show', reward
+      %td= link_to 'Edit', edit_reward_path(reward)
+      %td= link_to 'Destroy', reward, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Reward", new_reward_path

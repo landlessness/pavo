@@ -1,0 +1,16 @@
+= form_for @reward do |f|
+  = f.error_messages
+  %p
+    = f.label :rewardable
+    %br
+    = f.text_field :rewardable
+  %p
+    = f.label :person
+    %br
+    = f.text_field :person
+  %p
+    = f.label :value
+    %br
+    = f.number_field :value
+  %p
+    = f.submit

@@ -19,7 +19,7 @@ class ExhibitsController < ApplicationController
   def create
     @exhibit = current_person.exhibits.new(params[:exhibit])
     if @exhibit.save
-      redirect_to @exhibit, :notice => "Successfully created exhibit."
+      redirect_to @exhibit, notice: reward_notice(@exhibit.reward)
     else
       render :action => 'new'
     end
