@@ -12,11 +12,11 @@
 * Comment
 * Like
 * Relationship
+* Reward
+* Badge
 ### To Do
 * Purchase
 * Store
-* Point (more complete, more points, networks, tags per Exhibit, comments, like)
-* Badges
 
 ## Attributes
 
@@ -40,8 +40,6 @@ All models will have timestamp attributes for created and updated timing. All at
 * Category
   * name
   * photo url
-* Purchase
-* Store
 * Brand
   * name
   * logo url
@@ -50,6 +48,12 @@ All models will have timestamp attributes for created and updated timing. All at
 * Like
 * Relationship
   * status
+* Reward
+  * value
+#TODO
+* Badge
+* Purchase
+* Store
 
 ## Associations
 * Exhibit
@@ -79,14 +83,18 @@ All models will have timestamp attributes for created and updated timing. All at
 * Store
 * Brand
 * Comment
-  * belongs to an Exhibit or a Tag (polymorphic)
+  * belongs to a Commentable - Exhibit or a Tag
   * belongs to a Person
 * Like
-  * belongs to an Exhibit or a Tag (polymorphic)
+  * belongs to a Likable - Exhibit or a Tag
   * belongs to a Person
 * Relationship
   * belongs to a Person as Follower
   * belongs to a Person as Followee
+* Reward
+  * belongs to a Rewardable - Exhibit or a Tag
+  * belongs to a Person
+* Badge
 
 ## Depedencies
 ### Software

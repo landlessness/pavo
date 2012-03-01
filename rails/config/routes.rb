@@ -1,4 +1,6 @@
-Prails::Application.routes.draw do
+Pavo::Application.routes.draw do
+  resources :rewards
+
   resources :likes
 
   resources :categories

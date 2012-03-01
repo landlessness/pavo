@@ -7,8 +7,12 @@ class Exhibit < ActiveRecord::Base
   belongs_to :person
   has_many :comments, as: :commentable
   has_many :likes, as: :likable
+  has_many :rewards, as: :rewardable
   has_attached_file :photo,
                     styles: {small: '150x150>', thumb: '50x50>'}
 
   scope :followees, lambda { |follower| joins(person: :follower_relationships).where(relationships: {follower_id: follower})}
+  def after_create
+    self.rewards.create person: self.person
+  end
 end
